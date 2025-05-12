@@ -1,0 +1,267 @@
+:root {
+  /* Light Theme */
+  --very-light-gray: hsl(0, 0%, 98%);
+  --very-light-grayish-blue: hsl(236, 33%, 92%);
+  --light-grayish-blue: hsl(233, 11%, 84%);
+  --dark-grayish-blue: hsl(236, 9%, 61%);
+  --very-dark-grayish-blue: hsl(235, 19%, 35%);
+  
+  /* Dark Theme */
+  --very-dark-blue: hsl(235, 21%, 11%);
+  --very-dark-desaturated-blue: hsl(235, 24%, 19%);
+  --light-grayish-blue-dark: hsl(234, 39%, 85%);
+  --light-grayish-blue-hover: hsl(236, 33%, 92%);
+  --dark-grayish-blue-dark: hsl(234, 11%, 52%);
+  --very-dark-grayish-blue-1: hsl(233, 14%, 35%);
+  --very-dark-grayish-blue-2: hsl(237, 14%, 26%);
+  
+  /* Common */
+  --bright-blue: hsl(220, 98%, 61%);
+  --check-bg-from: hsl(192, 100%, 67%);
+  --check-bg-to: hsl(280, 87%, 65%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 18px;
+  background-color: var(--very-light-gray);
+  background-image: url('./images/bg-desktop-light.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 300px;
+  min-height: 100vh;
+  transition: background-color 0.3s;
+}
+
+body.dark-theme {
+  background-color: var(--very-dark-blue);
+  background-image: url('./images/bg-desktop-dark.jpg');
+}
+
+.container {
+  max-width: 540px;
+  margin: 0 auto;
+  padding: 70px 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+h1 {
+  color: white;
+  letter-spacing: 15px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+#theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.todo-input-container, .todo-list-container {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+  transition: background-color 0.3s;
+}
+
+.dark-theme .todo-input-container, 
+.dark-theme .todo-list-container {
+  background-color: var(--very-dark-desaturated-blue);
+}
+
+.todo-input-container {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.checkbox {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid var(--light-grayish-blue);
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.checkbox.checked {
+  background: linear-gradient(135deg, var(--check-bg-from), var(--check-bg-to));
+  background-image: url('./images/icon-check.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+}
+
+#todo-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: 18px;
+  color: var(--very-dark-grayish-blue);
+  background: transparent;
+}
+
+.dark-theme #todo-input {
+  color: var(--light-grayish-blue-dark);
+}
+
+#todo-input::placeholder {
+  color: var(--dark-grayish-blue);
+}
+
+#todo-list {
+  list-style: none;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid var(--very-light-grayish-blue);
+}
+
+.dark-theme .todo-item {
+  border-bottom: 1px solid var(--very-dark-grayish-blue-2);
+}
+
+.todo-text {
+  flex: 1;
+  color: var(--very-dark-grayish-blue);
+}
+
+.dark-theme .todo-text {
+  color: var(--light-grayish-blue-dark);
+}
+
+.todo-item.completed .todo-text {
+  text-decoration: line-through;
+  color: var(--light-grayish-blue);
+}
+
+.dark-theme .todo-item.completed .todo-text {
+  color: var(--very-dark-grayish-blue-1);
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.todo-item:hover .delete-btn {
+  opacity: 1;
+}
+
+.todo-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  color: var(--dark-grayish-blue);
+  font-size: 14px;
+}
+
+.todo-filters {
+  display: flex;
+  gap: 10px;
+}
+
+.filter {
+  background: none;
+  border: none;
+  color: var(--dark-grayish-blue);
+  cursor: pointer;
+  font-weight: 700;
+  font-family: inherit;
+}
+
+.filter:hover {
+  color: var(--very-dark-grayish-blue);
+}
+
+.dark-theme .filter:hover {
+  color: var(--light-grayish-blue-hover);
+}
+
+.filter.active {
+  color: var(--bright-blue);
+}
+
+#clear-completed {
+  background: none;
+  border: none;
+  color: var(--dark-grayish-blue);
+  cursor: pointer;
+  font-family: inherit;
+}
+
+#clear-completed:hover {
+  color: var(--very-dark-grayish-blue);
+}
+
+.dark-theme #clear-completed:hover {
+  color: var(--light-grayish-blue-hover);
+}
+
+.drag-info {
+  text-align: center;
+  color: var(--dark-grayish-blue);
+  margin-top: 40px;
+  font-size: 14px;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 20px;
+  color: var(--dark-grayish-blue);
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 600px) {
+  body {
+    background-image: url('./images/bg-mobile-light.jpg');
+  }
+  
+  body.dark-theme {
+    background-image: url('./images/bg-mobile-dark.jpg');
+  }
+  
+  .todo-footer {
+    flex-wrap: wrap;
+  }
+  
+  .todo-filters {
+    order: 2;
+    width: 100%;
+    justify-content: center;
+    margin-top: 15px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  }
+  
+  .dark-theme .todo-filters {
+    background-color: var(--very-dark-desaturated-blue);
+  }
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Todo app</title>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>TODO</h1>
+      <button id="theme-toggle" aria-label="Toggle theme">
+        <img src="./images/icon-moon.svg" alt="Dark mode" id="theme-icon">
+      </button>
+    </header>
+
+    <div class="todo-input-container">
+      <div class="checkbox"></div>
+      <input type="text" id="todo-input" placeholder="Create a new todo...">
+    </div>
+
+    <div class="todo-list-container">
+      <ul id="todo-list"></ul>
+      
+      <div class="todo-footer">
+        <span id="items-left">0 items left</span>
+        
+        <div class="todo-filters">
+          <button class="filter active" data-filter="all">All</button>
+          <button class="filter" data-filter="active">Active</button>
+          <button class="filter" data-filter="completed">Completed</button>
+        </div>
+        
+        <button id="clear-completed">Clear Completed</button>
+      </div>
+    </div>
+
+    <p class="drag-info">Drag and drop to reorder list</p>
+  </div>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Ayokanmi Adejola</a>.
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
